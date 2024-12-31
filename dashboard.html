@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-style-mode" content="1"> <!-- 0 == light, 1 == dark -->
+
+    <title>BI-BPC</title>
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/logo/favicon.png">
+    <!-- CSS ============================================ -->
+    <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/plugins/fontawesome-all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body class="active-light-mode">
+    <main class="page-wrapper rbt-dashboard-page">
+        <div class="rbt-panel-wrapper">
+            <header class="rbt-dashboard-header rainbow-header header-default header-left-align rbt-fluid-header">
+                <div class="container-fluid position-relative">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6 col-md-6 col-7">
+                            <div class="header-left">
+                                <div class="logo">
+                                    <div class="brand-logo">
+                                        <img src="assets/images/logo/SugarCaneStar.svg" alt="Logo">
+                                        <span>Business Process Co-Pilot</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-5">
+                            <div class="header-right">
+                                <div class="language-switch">
+                                    <div class="dropdown me-1">
+                                        <button type="button" class="btn btn-light dropdown-toggle" data-bs-toggle="dropdown">
+                                          <i class="fa-solid fa-globe"></i> Language
+                                        </button>
+                                        <ul class="dropdown-menu dropdown-menu-start p-1" id="languageDropdown">
+                                          <li>
+                                            <div class="dropdown-item">
+                                                <img src="assets/images/flags/es.png" alt="Spanish">
+                                                <span>Español</span>
+                                            </div>
+                                          </li>
+                                          <li>
+                                            <div class="dropdown-item">
+                                                <img src="assets/images/flags/en.png" alt="English">
+                                                <span>English</span>
+                                            </div>
+                                          </li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <!-- Start admin Area  -->
+                                <div class="account-access rbt-user-wrapper right-align-dropdown">
+                                    <div class="rbt-user ml--0">
+                                        <button class="bg-solid-primary">
+                                            <i class="fa-regular fa-user"></i>
+                                        </button>
+                                    </div>
+                                    <div class="rbt-user-menu-list-wrapper">
+                                        <div class="inner">
+                                            <div class="rbt-admin-profile">
+                                                <div class="admin-thumbnail">
+                                                    <i class="fa-regular fa-user"></i>
+                                                </div>
+                                                <div class="admin-info">
+                                                    <span class="name">John Adam</span>
+                                                    <a class='rbt-btn-link color-primary' href='#'>User Setting</a>
+                                                </div>
+                                            </div>
+                                            <hr class="mt--10 mb--10">
+                                            <ul class="user-list-wrapper">
+                                                <li>
+                                                    <a href='index.html'>
+                                                        <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                                                        <span>Logout</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Start admin Area  -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Preloader -->
+            <div class="preloader">
+                <div class='loader'>
+                    <div class='circle'></div>
+                    <div class='circle'></div>
+                    <div class='circle'></div>
+                    <div class='circle'></div>
+                    <div class='circle'></div>
+                </div>
+            </div>
+
+            <!-- Start Left panel -->
+            <div class="rbt-left-panel popup-dashboardleft-section">
+                <div class="rbt-default-sidebar">
+                    <div class="inner">
+                        <div class="content-item-content">
+                            <div class="rbt-default-sidebar-wrapper">
+                                <div class="expand-btn-left">
+                                    <button class="expand-button popup-dashboardleft-btn">
+                                        <i class="fa-solid fa-angles-left"></i>
+                                    </button>
+                                </div>
+                                <nav class="mainmenu-nav">
+                                    <ul class="dashboard-mainmenu rbt-default-sidebar-list">
+                                        <li><a href='#'><i class="fa-solid fa-house"></i><span>Home</span></a></li>
+                                        <li><a href='#'><i class="fa-regular fa-user"></i><span>User Info</span></a></li>
+                                    </ul>
+                                </nav>
+
+                                <div class="rbt-sm-separator"></div>
+
+                                <nav class="mainmenu-nav">
+                                    <ul class="dashboard-mainmenu rbt-default-sidebar-list">
+                                        <li>
+                                            <a class="btn-default bg-solid-primary text-light">
+                                                <span class="icon"><i class="fa-solid fa-pen-to-square text-light"></i></span>
+                                                <span>New Chat</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <ul class="dashboard-mainmenu rbt-default-sidebar-list">
+                                        <li class="has-submenu">
+                                            <a class="collapse-btn collapsed" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                                <i class="fa-solid fa-clock-rotate-left"></i>
+                                                <span>History</span>
+                                            </a>
+                                            <div class="collapse" id="collapseExample">
+                                                <ul class="submenu rbt-default-sidebar-list">
+                                                    <li>
+                                                        <a href='#'>
+                                                            <i class="fa-regular fa-file"></i>
+                                                            <span>History one</span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href='#'>
+                                                            <i class="fa-regular fa-file"></i>
+                                                            <span>History two</span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href='#'>
+                                                            <i class="fa-regular fa-file"></i>
+                                                            <span>History one more</span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href='#'>
+                                                            <i class="fa-regular fa-file"></i>
+                                                            <span>History last</span>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="user-footer-box">
+                        <div class="inner">
+                            <a class='autor-info' href='#'>
+                                <div class="author-img">
+                                    <i class="fa-regular fa-user"></i>
+                                </div>
+                                <div class="author-desc">
+                                    <h6>John Adam</h6>
+                                    <p>johnadam@net.cn</p>
+                                </div>
+                            </a>
+                            <div class="btn-part">
+                                <a class='btn-default btn-border' href='#'>Logout</a>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="user-footer-copyright copyright-text text-center b4  small-text">© 2024-26 Findability Sciences Inc.</p>
+                </div>
+            </div>
+            <!-- End Left panel -->
+
+            <!-- Main content -->
+            <div class="rbt-main-content">
+                <div class="rbt-daynamic-page-content">
+
+                    <!-- Dashboard Center Content -->
+                    <div class="rbt-dashboard-content">
+                        <div class="content-page">
+
+                            <div class="chat-box-list" id="chatContainer">
+
+                                <!-- Text Generator -->
+                                <div class="chat-box ai-speech ai-speech-init bg-flashlight">
+                                    <div class="inner top-flashlight leftside light-xl">
+                                        <div class="chat-section">
+                                            <div class="author">
+                                                <img class="w-100" src="assets/images/logo/SugarCaneStar.svg" alt="Co-pilot">
+                                            </div>
+                                            <div class="chat-content">
+                                                <h6 class="title">Hello, Aditya Bhagwat
+                                                </h6>
+                                                <p class="mb--20 with-info">
+                                                    I’m here to assist with business data insights. Share your questions, or click the Information icon to explore a glossary of business KPIs and data points.
+                                                    <i class="fa-solid fa-info-circle" onclick="window.location.open('./')"></i>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> 
+                                <div class="chat-box author-speech bg-flashlight">
+                                    <div class="chat-favourite is-favourite">
+                                        <i class="fa-solid fa-star text-warning" title="Add to Favourite"></i>
+                                    </div>
+                                    <div class="inner">
+                                        <div class="chat-section">
+                                            <div class="author">
+                                                <i class="fa-regular fa-user"></i>
+                                            </div>
+                                            <div class="chat-content">
+                                                <h6 class="title">You</h6>
+                                                <p>Share your questions, or click the Information icon to explore a glossary of business KPIs and data points</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="chat-box ai-speech bg-flashlight">
+                                    <div class="inner leftside light-xl">
+                                        <div class="chat-section">
+                                            <div class="author">
+                                                <img class="w-100" src="assets/images/logo/SugarCaneStar.svg" alt="Co-pilot">
+                                            </div>
+                                            <div class="chat-content">
+                                                <h6 class="title">Co-pilot <span class="rainbow-badge-card">Bot</span>
+                                                </h6>
+                                                <p class="mb--20">A chat AI, or chatAi, is a type of artificial
+                                                    intelligence designed to simulate conversation with human users,
+                                                    especially through natural language processing. These systems are
+                                                    often used in various applications, including customer service,
+                                                    virtual assistants, and online interactions.</p>
+                                                <div class="reaction-section">
+                                                    <div class="btn-grp">
+                                                        <div class="left-side-btn dropup">
+                                                            <button data-bs-toggle="modal" data-bs-target="#likeModal" class="react-btn btn-default btn-small btn-border"><i
+                                                                    class="fa-regular fa-thumbs-up"></i></button>
+                                                            <button data-bs-toggle="modal" data-bs-target="#dislikeModal" class="react-btn btn-default btn-small btn-border"><i
+                                                                    class="fa-regular fa-thumbs-down"></i></button>
+                                                            <button data-bs-toggle="modal" data-bs-target="#shareModal" class="react-btn btn-default btn-small btn-border">
+                                                                <i class="fa-solid fa-file-arrow-down"></i>
+                                                            </button>
+                                                            <button type="button" class="react-btn btn-default btn-small btn-border dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                                                            </button>
+                                                            <ul class="dropdown-menu">
+                                                                <li><a class="dropdown-item" href="#">
+                                                                    <i class="fa-regular fa-copy"></i> Copy</a></li>
+                                                                <li><a class="dropdown-item" href="#">
+                                                                    <i class="fa-solid fa-tag"></i> Pin Chat</a></li>
+                                                                <li><a class="dropdown-item" href="#">
+                                                                    <i class="fa-solid fa-file-pen"></i> Rename</a>
+                                                                </li>
+                                                                <li><a class="dropdown-item delete-item" href="#">
+                                                                    <i class="fa-solid fa-trash"></i> Delete Chat</a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="chat-box author-speech bg-flashlight">
+                                    <div class="chat-favourite">
+                                        <i class="fa-regular fa-star" title="Add to Favourite"></i>
+                                    </div>
+                                    <div class="inner">
+                                        <div class="chat-section">
+                                            <div class="author">
+                                                <i class="fa-regular fa-user"></i>
+                                            </div>
+                                            <div class="chat-content">
+                                                <h6 class="title">You</h6>
+                                                <p>For the Pantaleon sugar mill, between harvest days 75 and 125 in 2024, what is the trend in effluent losses?</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="chat-box ai-speech bg-flashlight">
+                                    <div class="inner leftside light-xl">
+                                        <div class="chat-section">
+                                            <div class="author">
+                                                <img class="w-100" src="assets/images/logo/SugarCaneStar.svg" alt="Co-pilot">
+                                            </div>
+                                            <div class="chat-content">
+                                                <h6 class="title">Co-pilot <span class="rainbow-badge-card">Bot</span>
+                                                </h6>
+                                                <p class="mb--20">
+                                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. At inventore accusantium cum obcaecati magni, nostrum maxime laboriosam magnam suscipit illo. Sunt expedita molestiae dolor neque natus ab doloribus laboriosam a.
+                                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. At inventore accusantium cum obcaecati magni, nostrum maxime laboriosam magnam suscipit illo. Sunt expedita molestiae dolor neque natus ab doloribus laboriosam a.
+                                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. At inventore accusantium cum obcaecati magni, nostrum maxime laboriosam magnam suscipit illo. Sunt expedita molestiae dolor neque natus ab doloribus laboriosam a.
+                                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. At inventore accusantium cum obcaecati magni, nostrum maxime laboriosam magnam suscipit illo. Sunt expedita molestiae dolor neque natus ab doloribus laboriosam a.
+                                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. At inventore accusantium cum obcaecati magni, nostrum maxime laboriosam magnam suscipit illo. Sunt expedita molestiae dolor neque natus ab doloribus laboriosam a.
+                                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. At inventore accusantium cum obcaecati magni, nostrum maxime laboriosam magnam suscipit illo. Sunt expedita molestiae dolor neque natus ab doloribus laboriosam a.
+                                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. At inventore accusantium cum obcaecati magni, nostrum maxime laboriosam magnam suscipit illo. Sunt expedita molestiae dolor neque natus ab doloribus laboriosam a.
+                                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. At inventore accusantium cum obcaecati magni, nostrum maxime laboriosam magnam suscipit illo. Sunt expedita molestiae dolor neque natus ab doloribus laboriosam a.
+                                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. At inventore accusantium cum obcaecati magni, nostrum maxime laboriosam magnam suscipit illo. Sunt expedita molestiae dolor neque natus ab doloribus laboriosam a.
+                                                </p>
+                                                <div class="reaction-section">
+                                                    <div class="btn-grp">
+                                                        <div class="left-side-btn dropup">
+                                                            <button data-bs-toggle="modal" data-bs-target="#Co-pilot" class="react-btn btn-default btn-small btn-border"><i
+                                                                    class="fa-regular fa-thumbs-up"></i></button>
+                                                            <button data-bs-toggle="modal" data-bs-target="#dislikeModal" class="react-btn btn-default btn-small btn-border"><i
+                                                                    class="fa-regular fa-thumbs-down"></i></button>
+                                                            <button data-bs-toggle="modal" data-bs-target="#shareModal" class="react-btn btn-default btn-small btn-border">
+                                                                <i class="fa-solid fa-file-arrow-down"></i>
+                                                            </button>
+                                                            <button type="button" class="react-btn btn-default btn-small btn-border dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                                                            </button>
+                                                            <ul class="dropdown-menu">
+                                                                <li><a class="dropdown-item" href="#">
+                                                                    <i class="fa-regular fa-copy"></i> Copy</a></li>
+                                                                <li><a class="dropdown-item" href="#">
+                                                                    <i class="fa-solid fa-tag"></i> Pin Chat</a></li>
+                                                                <li><a class="dropdown-item" href="#">
+                                                                    <i class="fa-solid fa-file-pen"></i> Rename</a>
+                                                                </li>
+                                                                <li><a class="dropdown-item delete-item" href="#">
+                                                                    <i class="fa-solid fa-trash"></i> Delete Chat</a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="chat-section generate-section">
+                                            <div class="author">
+                                                <img src="assets/images/loader-one.gif" alt="Loader Images">
+                                            </div>
+                                            <div class="chat-content">
+                                                <h6 class="title color-text-off mb--0">Generating Insights...</h6>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="chat-section generate-section">
+                                            <div class="author">
+                                                <img src="assets/images/loader-one.gif" alt="Loader Images">
+                                            </div>
+                                            <div class="chat-content">
+                                                <h6 class="title color-text-off mb--0">Generating Graph...</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="chat-box author-speech bg-flashlight">
+                                    <div class="chat-favourite">
+                                        <i class="fa-regular fa-star" title="Add to Favourite"></i>
+                                    </div>
+                                    <div class="inner">
+                                        <div class="chat-section">
+                                            <div class="author">
+                                                <i class="fa-regular fa-user"></i>
+                                            </div>
+                                            <div class="chat-content">
+                                                <h6 class="title">You</h6>
+                                                <p>For the Pantaleon sugar mill, between harvest days 75 and 125 in 2024, what is the trend in effluent losses?</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="chat-box ai-speech bg-flashlight">
+                                    <div class="inner leftside light-xl">
+                                        <div class="chat-section">
+                                            <div class="author">
+                                                <img class="w-100" src="assets/images/logo/SugarCaneStar.svg" alt="Co-pilot">
+                                            </div>
+                                            <div class="chat-content">
+                                                <h6 class="title">Co-pilot <span class="rainbow-badge-card">Bot</span>
+                                                </h6>
+                                                <p class="mb--20">
+                                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. At inventore accusantium cum obcaecati magni, nostrum maxime laboriosam magnam suscipit illo. Sunt expedita molestiae dolor neque natus ab doloribus laboriosam a.
+                                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. At inventore accusantium cum obcaecati magni, nostrum maxime laboriosam magnam suscipit illo. Sunt expedita molestiae dolor neque natus ab doloribus laboriosam a.
+                                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. At inventore accusantium cum obcaecati magni, nostrum maxime laboriosam magnam suscipit illo. Sunt expedita molestiae dolor neque natus ab doloribus laboriosam a.
+                                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. At inventore accusantium cum obcaecati magni, nostrum maxime laboriosam magnam suscipit illo. Sunt expedita molestiae dolor neque natus ab doloribus laboriosam a.
+                                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. At inventore accusantium cum obcaecati magni, nostrum maxime laboriosam magnam suscipit illo. Sunt expedita molestiae dolor neque natus ab doloribus laboriosam a.
+                                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. At inventore accusantium cum obcaecati magni, nostrum maxime laboriosam magnam suscipit illo. Sunt expedita molestiae dolor neque natus ab doloribus laboriosam a.
+                                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. At inventore accusantium cum obcaecati magni, nostrum maxime laboriosam magnam suscipit illo. Sunt expedita molestiae dolor neque natus ab doloribus laboriosam a.
+                                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. At inventore accusantium cum obcaecati magni, nostrum maxime laboriosam magnam suscipit illo. Sunt expedita molestiae dolor neque natus ab doloribus laboriosam a.
+                                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. At inventore accusantium cum obcaecati magni, nostrum maxime laboriosam magnam suscipit illo. Sunt expedita molestiae dolor neque natus ab doloribus laboriosam a.
+                                                </p>
+                                                <div class="reaction-section">
+                                                    <div class="btn-grp">
+                                                        <div class="left-side-btn dropup">
+                                                            <button data-bs-toggle="modal" data-bs-target="#Co-pilot" class="react-btn btn-default btn-small btn-border"><i
+                                                                    class="fa-regular fa-thumbs-up"></i></button>
+                                                            <button data-bs-toggle="modal" data-bs-target="#dislikeModal" class="react-btn btn-default btn-small btn-border"><i
+                                                                    class="fa-regular fa-thumbs-down"></i></button>
+                                                            <button data-bs-toggle="modal" data-bs-target="#shareModal" class="react-btn btn-default btn-small btn-border">
+                                                                <i class="fa-solid fa-file-arrow-down"></i>
+                                                            </button>
+                                                            <button type="button" class="react-btn btn-default btn-small btn-border dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                                                            </button>
+                                                            <ul class="dropdown-menu">
+                                                                <li><a class="dropdown-item" href="#">
+                                                                    <i class="fa-regular fa-copy"></i> Copy</a></li>
+                                                                <li><a class="dropdown-item" href="#">
+                                                                    <i class="fa-solid fa-tag"></i> Pin Chat</a></li>
+                                                                <li><a class="dropdown-item" href="#">
+                                                                    <i class="fa-solid fa-file-pen"></i> Rename</a>
+                                                                </li>
+                                                                <li><a class="dropdown-item delete-item" href="#">
+                                                                    <i class="fa-solid fa-trash"></i> Delete Chat</a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="chat-section generate-section">
+                                            <div class="author">
+                                                <img src="assets/images/loader-one.gif" alt="Loader Images">
+                                            </div>
+                                            <div class="chat-content">
+                                                <h6 class="title color-text-off mb--0">Generating Insights...</h6>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="chat-section generate-section">
+                                            <div class="author">
+                                                <img src="assets/images/loader-one.gif" alt="Loader Images">
+                                            </div>
+                                            <div class="chat-content">
+                                                <h6 class="title color-text-off mb--0">Generating Graph...</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+                        <!-- User Input -->
+                        <div class="rbt-static-bar">
+                            <form class="new-chat-form border-gradient">
+                                <textarea id="txtarea" rows="1" placeholder="Send a message..."></textarea>
+                                
+                                <div class="right-icons">
+                                    <div class="form-icon icon-plus" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip" data-bs-title="Choose File">
+                                        <input type="file" class="input-file" name="myfile" multiple>
+                                        <i class="fa-solid fa-circle-plus"></i>
+                                    </div>
+                                    <button class="form-icon icon-mic" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip" data-bs-title="Voice Search">
+                                        <i class="fa-solid fa-microphone"></i>
+                                    </button>
+                                    <button class="form-icon icon-send" id="sendButton" onclick="()=>{}" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip" data-bs-title="Send message">
+                                        <i class="fa-solid fa-paper-plane"></i>
+                                    </button>
+                                </div>
+                            </form>
+                            <div class="input-footer">
+                                <div class="myFavourite" title="Click to select Favourite Prompt">
+                                    <i class="fa-solid fa-star text-warning"></i>
+                                    <span>Favourite Prompts</span>
+                                </div>
+                            </div>
+                            <p class="b3 small-text small-info">Descargo de responsabilidad: Este Business Process Co-Pilot (BPC) proporciona respuestas generadas por IA, que pueden no ser siempre exactas. Verifique toda la información de forma independiente.</p>
+                        </div>
+                    </div>
+
+                    <!-- Dashboard Right Content -->
+                    <div class="rbt-right-side-panel popup-dashboardright-section">
+                        <div class="expand-btn-right">
+                            <button class="expand-button popup-dashboardright-btn">
+                                <i class="fa-solid fa-angles-right"></i>
+                            </button>
+                        </div>
+                        <div class="right-side-bottom">
+                            <div class="chat-history-section has-show-more">
+                                <h6 class="title">
+                                    Current Conversation <i class="fa-solid fa-info-circle" title="Questions asked during the current conversation."></i>
+                                </h6>
+                                <ul class="chat-history-list has-show-more-inner-content">
+                                    <li class="history-box">
+                                        How to write a code
+                                        <div class="dropdown history-box-dropdown">
+                                            <button type="button" class="more-info-icon dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                                <i class="fa-solid fa-ellipsis"></i>
+                                            </button>
+                                            <ul class="dropdown-menu">
+                                                <li><a class="dropdown-item" href="#"><i class="fa-regular fa-copy"></i> Copy</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="history-box">
+                                        User Assistant Request
+                                        <div class="dropdown history-box-dropdown">
+                                            <button type="button" class="more-info-icon dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                                <i class="fa-solid fa-ellipsis"></i>
+                                            </button>
+                                            <ul class="dropdown-menu">
+                                                <li><a class="dropdown-item" href="#"><i class="fa-regular fa-copy"></i> Copy</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="history-box">
+                                        Funtion Js
+                                        <div class="dropdown history-box-dropdown">
+                                            <button type="button" class="more-info-icon dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                                <i class="fa-solid fa-ellipsis"></i>
+                                            </button>
+                                            <ul class="dropdown-menu">
+                                                <li><a class="dropdown-item" href="#"><i class="fa-regular fa-copy"></i> Copy</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="history-box">
+                                        Generate a Image
+                                        <div class="dropdown history-box-dropdown">
+                                            <button type="button" class="more-info-icon dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                                <i class="fa-solid fa-ellipsis"></i>
+                                            </button>
+                                            <ul class="dropdown-menu">
+                                                <li><a class="dropdown-item" href="#"><i class="fa-regular fa-copy"></i> Copy</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="history-box">
+                                        Form Html CSS JS
+                                        <div class="dropdown history-box-dropdown">
+                                            <button type="button" class="more-info-icon dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                                <i class="fa-solid fa-ellipsis"></i>
+                                            </button>
+                                            <ul class="dropdown-menu">
+                                                <li><a class="dropdown-item" href="#"><i class="fa-regular fa-copy"></i> Copy</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="history-box">
+                                        Your last Question
+                                        <div class="dropdown history-box-dropdown">
+                                            <button type="button" class="more-info-icon dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                                <i class="fa-solid fa-ellipsis"></i>
+                                            </button>
+                                            <ul class="dropdown-menu">
+                                                <li><a class="dropdown-item" href="#"><i class="fa-regular fa-copy"></i> Copy</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="history-box">
+                                        Unique Shortcurt Methode
+                                        <div class="dropdown history-box-dropdown">
+                                            <button type="button" class="more-info-icon dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                                <i class="fa-solid fa-ellipsis"></i>
+                                            </button>
+                                            <ul class="dropdown-menu">
+                                                <li><a class="dropdown-item" href="#"><i class="fa-regular fa-copy"></i> Copy</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="history-box">
+                                        Generate a circle Image
+                                        <div class="dropdown history-box-dropdown">
+                                            <button type="button" class="more-info-icon dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                                <i class="fa-solid fa-ellipsis"></i>
+                                            </button>
+                                            <ul class="dropdown-menu">
+                                                <li><a class="dropdown-item" href="#"><i class="fa-regular fa-copy"></i> Copy</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="history-box">
+                                        User Assistant Request
+                                        <div class="dropdown history-box-dropdown">
+                                            <button type="button" class="more-info-icon dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                                <i class="fa-solid fa-ellipsis"></i>
+                                            </button>
+                                            <ul class="dropdown-menu">
+                                                <li><a class="dropdown-item" href="#"><i class="fa-regular fa-copy"></i> Copy</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="history-box">
+                                        Funtion Js
+                                        <div class="dropdown history-box-dropdown">
+                                            <button type="button" class="more-info-icon dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                                <i class="fa-solid fa-ellipsis"></i>
+                                            </button>
+                                            <ul class="dropdown-menu">
+                                                <li><a class="dropdown-item" href="#"><i class="fa-regular fa-copy"></i> Copy</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="history-box">
+                                        Generate a Image
+                                        <div class="dropdown history-box-dropdown">
+                                            <button type="button" class="more-info-icon dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                                <i class="fa-solid fa-ellipsis"></i>
+                                            </button>
+                                            <ul class="dropdown-menu">
+                                                <li><a class="dropdown-item" href="#"><i class="fa-regular fa-copy"></i> Copy</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <div class="rbt-show-more-btn">Show More</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!--Like Section Modal HTML -->
+        <div id="likeModal" class="modal rbt-modal-box like-modal fade" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content wrapper top-flashlight leftside light-xl">
+                    <h5 class="title">Provide additional feedback</h5>
+                    <div class="chat-form">
+                        <div class="border-gradient text-form">
+                            <textarea rows="6" placeholder="Send a message..."></textarea>
+                        </div>
+                    </div>
+                    <div class="bottom-btn mt--20">
+                        <a class="btn-default btn-small round" href="#">Send Feedback</a>
+                    </div>
+                    <button class="close-button" data-bs-dismiss="modal">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!--DisLike Section Modal HTML -->
+        <div id="dislikeModal" class="modal rbt-modal-box dislike-modal fade" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content wrapper top-flashlight leftside light-xl">
+                    <h5 class="title">Why do you like this response?</h5>
+                    <select class="form-select" multiple aria-label="multiple select example">
+                        <option selected>Irrelevant</option>
+                        <option value="2">Offensive</option>
+                        <option value="3">Not Correct</option>
+                    </select>
+                    <div class="chat-form">
+                        <h6 class="title">Provide your feedback</h6>
+                        <div class="border-gradient text-form">
+                            <textarea rows="6" placeholder="Send a message..."></textarea>
+                        </div>
+                    </div>
+                    <div class="bottom-btn mt--20">
+                        <a class="btn-default btn-small round" href="#">Send Feedback</a>
+                    </div>
+                    <button class="close-button" data-bs-dismiss="modal">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="rn-progress-parent rn-backto-top-active">
+            <svg class="rn-back-circle svg-inner" width="100%" height="100%" viewBox="-1 -1 102 102">
+                <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" style="transition: stroke-dashoffset 10ms linear 0s; stroke-dasharray: 307.919, 307.919; stroke-dashoffset: 246.547;">
+                </path>
+            </svg>
+        </div>
+        <div class="rn-scroll-down">
+            <svg class="rn-down-circle svg-inner" width="100%" height="100%" viewBox="-1 -1 102 102">
+                <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" style="transition: stroke-dashoffset 10ms linear 0s; stroke-dasharray: 307.919, 307.919; stroke-dashoffset: 246.547;">
+                </path>
+            </svg>
+        </div>
+    </main>
+    <!-- All Scripts  -->
+    <!-- JS
+============================================ -->
+    <script src="assets/js/vendor/jquery.min.js"></script>
+    <script src="assets/js/vendor/bootstrap.min.js"></script>
+    <script src="assets/js/vendor/popper.min.js"></script>
+    <script src="assets/js/vendor/waypoint.min.js"></script>
+    <script src="assets/js/vendor/backto-top.js"></script>
+
+    <script src="assets/js/vendor/js.cookie.js"></script>
+    <!-- Main JS -->
+    <script src="assets/js/main.js"></script>
+
+
+</body>
+</html>
